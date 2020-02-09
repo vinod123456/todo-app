@@ -6,11 +6,10 @@ import { deleteTodo, toggleStatus } from '../redux'
 // Import AddToto Component
 import Model from './Model'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_PENDING } from './config'
-let date = new Date()
 const initialState = {
     summary: '',
     description: '',
-    createdDate: `${date.getFullYear()}-${date.getMonth() < 9 ? `0${date.getMonth()}` : date.getMonth()}-${date.getDate() < 9 ? `0${date.getDate()}` : date.getDate()}`,
+    createdDate: new Date().toISOString().slice(0, 10),
     dueDate: '',
     priority: 'None',
     completed: false
